@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "../css/components/header.css"
 const Header = ({ loadUser,user, points }) => {
 
     useEffect(() => {
@@ -7,14 +7,14 @@ const Header = ({ loadUser,user, points }) => {
     },[loadUser]);
     
   return (
-    <header >
+    <header className="header" >
     <img
       src={process.env.PUBLIC_URL + "/aerolab-logo.svg"}
       alt="Aerolab Logo"
     ></img>
-    <div>
-      <p> {user.name} </p>
-        <div>
+    <div className="info">
+      <p className="user"> {user.name} </p>
+        <div className="points">
         <span>{points}</span>
           <img
             src={process.env.PUBLIC_URL + "/icons/coin.svg"}

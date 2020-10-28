@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {getUser} from "../redux/actions/users";
+import { getUser } from "../redux/actions/users";
 import Header from "../Header";
 
 const mapStateToProps = (state) => {

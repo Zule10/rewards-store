@@ -1,0 +1,36 @@
+
+a {
+    color: grey;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    min-height: 7.6rem;
+    padding: 1.6rem 4.2rem;
+}
+
+.info {
+    align-items: center;
+    color: grey;
+    display: flex;
+    font-size: 2.4rem;
+}
+  
+.points {
+    background-color: rgba(172, 172, 172, 0.2);
+    border-radius: 2.05rem;
+    padding: 1.2rem;
+    text-align: center;    
+}
+
+span {
+    margin-right: 0.6rem;
+}
+
+.user {
+    margin-right: 2.7rem;
+}
+
+  
