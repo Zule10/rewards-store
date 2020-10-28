@@ -1,9 +1,9 @@
-import UserHeader from "./components/containers/UserHeader";
+import Header from "./components/containers/Header";
 
 function App() {
   return (
     <div className="App">
-      <UserHeader />
+      <Header />
     </div>
   );
 }

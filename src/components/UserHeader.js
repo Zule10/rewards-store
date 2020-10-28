@@ -12,8 +12,8 @@ const Header = ({ loadUser,user, points }) => {
       src={process.env.PUBLIC_URL + "/aerolab-logo.svg"}
       alt="Aerolab Logo"
     ></img>
-    <div className="info">
-      <p className="user"> {user.name} </p>
+    <div className="user-info">
+      <p className="user-name"> {user.name} </p>
         <div className="points">
         <span>{points}</span>
           <img

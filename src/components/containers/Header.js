@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getUser } from "../redux/actions/users";
-import Header from "../Header";
+import UserHeader from "../UserHeader";
 
 const mapStateToProps = (state) => {
     return {    
@@ -15,4 +15,4 @@ const mapStateToProps = (state) => {
     };
   };
   
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(UserHeader);
