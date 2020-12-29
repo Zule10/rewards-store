@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getUser } from "../redux/actions/users";
-import Header from "../UserHeader";
+import Header from "../global/Header";
 
 const mapStateToProps = (state) => {
     return {    

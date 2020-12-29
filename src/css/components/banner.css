@@ -6,7 +6,7 @@
     background-size: cover;
     display: flex;
     margin-bottom: 4rem;
-    min-height: 35rem;
+    min-height: 45rem;
     position: relative;
 }
 
@@ -21,7 +21,7 @@
 
 .b-title {
     color: white;
-    font-size: 4rem;
+    font-size: 6rem;
     line-height: 1.5;
     padding-bottom: 5rem;
 }

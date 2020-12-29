@@ -1,5 +1,6 @@
 import Header from "./components/containers/Header";
-import Banner from "./components/Banner";
+import Banner from "./components/global/Banner";
+import Products from "./components/containers/Products";
 import "./css/App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <Banner title="Products" />
+      <Products />
     </div>
   );
 }

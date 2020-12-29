@@ -2,30 +2,29 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    min-height: 6.2rem;
-    padding: 1.2rem 3.2rem;
+    min-height: 9.4rem;
+    padding: 1.6rem 4.2rem;
 }
 
 span {
-    margin-right: 0.7rem;
-    text-align: left;
+    margin-right: 0.8rem;
 }
 
 .user-info {
     align-items: center;
     color: grey;
     display: flex;
-    font-size: 2rem;
+    font-size: 3rem;
 }
   
 .user-name {  
-    margin-right: 2.7rem;
+    margin-right: 2rem;
 }
 
 .user-points {
     background-color: rgba(172, 172, 172, 0.2);
-    border-radius: 2.05rem;
-    padding: 1rem;
-    text-align: center;  
+    border-radius: 2rem;
+    padding: 1.2rem;
+    text-align: center;
 }
   
