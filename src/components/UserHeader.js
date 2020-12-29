@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../css/components/header.css"
+
 const Header = ({ loadUser,user, points }) => {
 
     useEffect(() => {
@@ -14,9 +14,9 @@ const Header = ({ loadUser,user, points }) => {
     ></img>
     <div className="user-info">
       <p className="user-name"> {user.name} </p>
-        <div className="points">
+        <div className="user-points">
         <span>{points}</span>
-          <img
+          <img 
             src={process.env.PUBLIC_URL + "/icons/coin.svg"}
             alt="Coin"
           ></img>

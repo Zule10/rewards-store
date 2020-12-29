@@ -1,8 +1,3 @@
-
-a {
-    color: grey;
-}
-
 .header {
     background-color: white;
     display: flex;
@@ -11,26 +6,26 @@ a {
     padding: 1.2rem 3.2rem;
 }
 
+span {
+    margin-right: 0.7rem;
+    text-align: left;
+}
+
 .user-info {
     align-items: center;
     color: grey;
     display: flex;
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
   
-.points {
-    background-color: rgba(172, 172, 172, 0.2);
-    border-radius: 2.05rem;
-    padding: 1rem;
-    text-align: center;       
-}
-
-span {
-    margin-right: 0.7rem;
-}
-
-.user-name {
+.user-name {  
     margin-right: 2.7rem;
 }
 
+.user-points {
+    background-color: rgba(172, 172, 172, 0.2);
+    border-radius: 2.05rem;
+    padding: 1rem;
+    text-align: center;  
+}
   

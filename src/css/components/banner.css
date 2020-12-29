@@ -1,0 +1,27 @@
+
+.banner {
+    align-items: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    margin-bottom: 4rem;
+    min-height: 35rem;
+    position: relative;
+}
+
+.b-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    max-width: 117rem;
+    width: 100%;
+}
+
+.b-title {
+    color: white;
+    font-size: 4rem;
+    line-height: 1.5;
+    padding-bottom: 5rem;
+}
