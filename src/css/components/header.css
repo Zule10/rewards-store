@@ -2,29 +2,62 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    min-height: 9.4rem;
-    padding: 1.6rem 4.2rem;
+    min-height: 6rem;
+    padding: 0.5rem 4.2rem;    
+    font-weight: 500;
 }
-
-span {
-    margin-right: 0.8rem;
-}
-
 .user-info {
     align-items: center;
     color: grey;
-    display: flex;
-    font-size: 3rem;
+    justify-content: space-between;
+    display: flex;    
+    font-size: 2rem;
 }
   
 .user-name {  
-    margin-right: 2rem;
+   letter-spacing: -0.015rem;
+    margin-right:1.5rem; 
 }
 
-.user-points {
+.user-icons {
     background-color: rgba(172, 172, 172, 0.2);
-    border-radius: 2rem;
-    padding: 1.2rem;
-    text-align: center;
+    border-radius: 1.5rem;
+    padding: 0.6rem 1rem 0.6rem 0.6rem;
+    text-align: center; 
+    justify-content: space-between;
+    display: flex;    
 }
-  
+.user-points {
+  margin: 0.6rem;
+  max-height: 30px;
+}
+ 
+.user-icons > img {
+    margin: auto;
+}
+
+.tooltip {
+    display:inline-block;
+    position:relative;
+    text-align:center;
+}
+
+.tooltip .tooltex {
+    min-width:10rem; 
+    transform:translate(-50%, 0);
+    padding:5px 5px;
+    color:grey;
+    background-color:#EEEEEE;
+    font-weight:bold;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 10px 30px 0 rgba(255, 196, 0);
+    display:none;
+}
+
+.tooltip:hover .tooltex {
+    display:block;
+}

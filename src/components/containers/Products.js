@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
     console.log(state)  
     return {            
       products: state.product_reducer.product,
-      points: state.user_reducer.user.points,
+      points: 100,
     };
   };
   

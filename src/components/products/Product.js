@@ -2,7 +2,7 @@ import React from "react";
 
 const Product = ({ category, cost, img, name, redeemPoints, points }) => {
   return (
-    <div>
+    <div className="grid-item">
       <div className="card">
         <img
           className="card-image"
@@ -18,11 +18,13 @@ const Product = ({ category, cost, img, name, redeemPoints, points }) => {
           <p className="card-category">{category}</p>
           <p className="card-name">{name}</p>
         </div>     
-        {points > cost ? (
+        {points >= cost ? (
           <div className="card-redeem">
             <>
               <div className="card-price" >
-                <span>{cost}</span>
+                <div className="card-cost">
+                  <span>{cost}</span>
+                </div>
                 <img
                   src={process.env.PUBLIC_URL + "/icons/coin.svg"}
                   alt="Coins"
@@ -34,20 +36,29 @@ const Product = ({ category, cost, img, name, redeemPoints, points }) => {
             </>
           </div>
         ) : null}
-        {points > cost ? (
-          <div className="error"></div>
-        ) : (
-          <div className="success">
-            <span>Missing {cost - points}</span>
+        {points >= cost ? (
             <img
-              src={process.env.PUBLIC_URL + "/icons/coin.svg"}
-              alt="Coins"
+            className="card-buy"
+              src={process.env.PUBLIC_URL + "/icons/buy-blue.svg"}
+              alt="Buy"
             ></img>
-          </div>
-        )}
-           
-    </div>      
-      
+        ) : (
+          <div className="card-missing-coins">              
+            <div className="card-price">
+              <div className="card-cost">
+                  <span>{cost}</span>
+              </div>
+              <img
+                  src={process.env.PUBLIC_URL + "/icons/coin.svg"}
+                  alt="Coins"
+              ></img>  
+            </div>  
+            <button className="card-missing-button">              
+                Missing                  
+            </button>  
+          </div> 
+        )}           
+    </div>     
     </div>
   );
 };
