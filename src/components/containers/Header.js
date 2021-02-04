@@ -5,7 +5,7 @@ import Header from "../global/Header";
 const mapStateToProps = (state) => {
     return {    
       user: state.user_reducer.user,
-      points: state.user_reducer.user.points,
+      points: state.points_reducer.points,
     };
   };
   

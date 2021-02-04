@@ -3,10 +3,9 @@ import { getProducts } from "../redux/actions/products";
 import Products from "../products/Products";
 
 const mapStateToProps = (state) => { 
-    console.log(state)  
     return {            
       products: state.product_reducer.product,
-      points: 100,
+      points: 500, //state.user_reducer.user.points,
     };
   };
   

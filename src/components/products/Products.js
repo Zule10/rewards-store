@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Product from "./Product";
 
 const Products = ({ loadProduct, products, points }) => {
-console.log(points)
     useEffect(() => {
         loadProduct();
     },[loadProduct]);
