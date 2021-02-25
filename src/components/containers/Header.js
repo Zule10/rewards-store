@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
     return {    
       user: state.user_reducer.user,
       points: state.points_reducer.points,
+      message: state.points_reducer.message
     };
   };
   

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ loadUser,user, points }) => {
+const Header = ({ loadUser,user, points,message }) => {
 
     useEffect(() => {
         loadUser();
-    },[loadUser,points]);
+    },[loadUser,points,message]);
     
   return (    
       <header className="header">

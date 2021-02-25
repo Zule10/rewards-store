@@ -2,6 +2,7 @@ const initialState = {
     product: [],
     loading: false,
     error: null,
+    orderby: ""
   };
   
 const product_reducer = (state = initialState,action) =>{
@@ -25,6 +26,15 @@ const product_reducer = (state = initialState,action) =>{
       return {
         ...state,
         error: action.error,
+        loading: false,
+      };
+    }
+
+    case "LOAD_ORDERED_PRODUCTS": {
+      return {
+        ...state,
+        product: action.orderedProduct,
+        orderby: action.orderby,        
         loading: false,
       };
     }

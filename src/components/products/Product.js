@@ -1,16 +1,19 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-const Product = ({ category, cost, img, name, redeemPoints, points }) => {
+
+function Product ({category, cost, img, name, points,redeemPoints}) {
+
+  const history = useHistory();
+  const navigateTo = () => history.push('/rewards-store/points');
+  const img_name = img.split('/');
+
   return (
     <div className="grid-item">
       <div className="card">
         <img
           className="card-image"
-          src={
-            img
-              ? img
-              : process.env.PUBLIC_URL + "/product-pics/MacbookPro-x1.png"
-          }
+          src={process.env.PUBLIC_URL + "/product-pics/" + img_name[img_name.length-1]}
           alt={name}
         />
         <hr />
@@ -53,14 +56,14 @@ const Product = ({ category, cost, img, name, redeemPoints, points }) => {
                   alt="Coins"
               ></img>  
             </div>  
-            <button className="card-missing-button">              
+            <button className="card-missing-button" onClick={navigateTo}>              
                 Missing                  
             </button>  
           </div> 
         )}           
-    </div>     
+      </div>     
     </div>
   );
-};
+}
 
 export default Product;
