@@ -18,7 +18,7 @@ export const getUser = () => {
     return async (dispatch) => {
         dispatch(loadUserInProgress());
 
-        const res = await fetch("https://coding-challenge-api.aerolab.co/user/me", {method: "GET", headers});
+        const res = await fetch("https://coding-challenge-api.aerolab.co/user/me", {method: "GET",'mode': 'cors', headers});
         const result = await res.json();
 
         try {

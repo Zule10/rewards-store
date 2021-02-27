@@ -6,15 +6,18 @@ import Products from "../products/Products";
 const mapStateToProps = (state) => { 
     return {            
       products: state.product_reducer.product,
-      userPoints: state.user_reducer.user.points,//500
+      user: state.user_reducer.user,
       productsByPage:16,
-      point: state.points_reducer
+      point: state.points_reducer,
+      orderby: state.product_reducer.orderby,
+      isLoading: state.product_reducer.loading,
+      userLoading: state.user_reducer.loading
     };
   };
   
   const mapDispatchToProps = (dispatch) => {
     return {
-      loadProduct: () => dispatch(getProducts()),
+      loadProduct: (sort) => dispatch(getProducts(sort)),
       orderProduct: (prod,sort) => dispatch(getOrderedProducts(prod,sort)),
       redeemProduct: (id) => dispatch(redeemPoints(id))
     };

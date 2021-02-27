@@ -209,3 +209,27 @@ button{
   font-size:1.6rem;
   color:rgb(54, 54, 54); 
 }
+.load-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.load {
+  position: absolute;
+  top: 50%;
+  font-size: 100px;
+  color: gray;
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 2s linear infinite;
+}

@@ -4,9 +4,11 @@ import Pagination from "../Pagination";
 import usePagination from "../hooks/pagination";
 import ProductHeader from "./ProductHeader";
 import CountProducts from "./CountProducts";
-import Modal from "../global/Modal"
+import Modal from "../global/Modal";
+import Loader from "../global/Loader";
 
-const Products = ({ loadProduct, products, userPoints, productsByPage, orderProduct, redeemProduct, point }) => {
+const Products = ({ loadProduct, products, user, productsByPage,
+    orderProduct,redeemProduct, point, isLoading,userLoading }) => {
 
     const [showModal,setShow]  = useState(false);
     const [modalMessage,setMessage]  = useState("");
@@ -15,12 +17,13 @@ const Products = ({ loadProduct, products, userPoints, productsByPage, orderProd
         setShow(false);
         point.message = "";
     };
-
+    const showLoader = () =>{    
+        return (
+            <Loader />
+        );
+    };
     useEffect(() => {
         loadProduct();
-
-        console.log(point.message);
-
         if(point.message !== ""){
             setShow(true);
             if(point.message.error){
@@ -31,17 +34,23 @@ const Products = ({ loadProduct, products, userPoints, productsByPage, orderProd
         }else{            
             setShow(false);
         }                
-        
-    },[loadProduct,point.message,userPoints]);
+    },[loadProduct,point.message,user.points]);
 
     const paginatedProducts= usePagination(products, productsByPage);
-    const splitedProducts = paginatedProducts.currentData();
-   
+    const splitedProducts = paginatedProducts.currentData();  
+
+    if (isLoading || (!isLoading && userLoading)) {
+        return (
+            <Loader />
+        );
+    }
+
     return (
-      <div>
+      <div>          
         <Modal show={showModal} 
                onClose ={closeModal}
                message ={modalMessage}/>   
+
         <div className="p-header">
             <CountProducts 
                 totalProducts = {products.length} 
@@ -54,16 +63,19 @@ const Products = ({ loadProduct, products, userPoints, productsByPage, orderProd
         <div className="grid-container">        
             {splitedProducts.map((product, index) => {
             const { _id, category, cost, img, name } = product;
-            return (
-                <Product
-                    key={name + index}
-                    _id={_id}
-                    category={category}
-                    cost={cost}
-                    img={img.url}
-                    name={name} 
-                    points ={userPoints}
-                    redeemPoints = { () => redeemProduct(_id)}/>
+                return (
+                    <Product
+                        key={name + index}
+                        _id={_id}
+                        category={category}
+                        cost={cost}
+                        img={img.url}
+                        name={name} 
+                        points ={user.points}
+                        redeemPoints = { () => {                            
+                            showLoader();
+                            redeemProduct(_id);
+                        }}/>
                 );
             })};          
         </div>  

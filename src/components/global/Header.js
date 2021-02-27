@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loader from "../global/Loader";
 
 const Header = ({ loadUser,user, points,message }) => {
 
-    useEffect(() => {
-        loadUser();
-    },[loadUser,points,message]);
-    
+  useEffect(() => {
+      loadUser();
+  },[loadUser,user.points,points,message]);
+  
+  if (user.loading) {
+    return (
+      <Loader />
+    );
+  } 
   return (    
       <header className="header">
         <Link style={{ display: "inline-flex" }} to="/rewards-store/">

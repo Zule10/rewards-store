@@ -33,7 +33,8 @@ export const addPoints = (amount) => {
         dispatch(addPointsInProgress());
 
         const res = await fetch("https://coding-challenge-api.aerolab.co/user/points", 
-        {method: "POST",headers, body: JSON.stringify({ amount })});
+        {method: "POST",'mode': 'cors',headers, body: JSON.stringify({ amount })});
+
         const result = await res.json();
 
         try {
@@ -45,13 +46,12 @@ export const addPoints = (amount) => {
 };
 
 export const redeemPoints = (id) => {
-    console.log(id);
     return async (dispatch) => {
         dispatch(redeemPointsInProgress());
+
         const res = await fetch("https://coding-challenge-api.aerolab.co/redeem", 
-        {method: "POST",headers, body: JSON.stringify({ productId: id })});
-        console.log('hola');
-        console.log(JSON.stringify({ productId: id }));
+        {method: "POST",'mode': 'cors',headers, body: JSON.stringify({ productId: id })});
+   
         const result = await res.json();
 
         try {

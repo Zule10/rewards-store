@@ -24,9 +24,10 @@ export const getProducts = () => {
     return async (dispatch) => {
         dispatch(loadProductInProgress());
 
-        const res = await fetch("https://coding-challenge-api.aerolab.co/products", {method: "GET",headers});
+        const res = await fetch("https://coding-challenge-api.aerolab.co/products", {method: "GET",'mode': 'cors',headers});
         const result = await res.json();
-        try {
+
+        try {         
             dispatch(loadProductSuccess(result));
         } catch (error) {
             dispatch(loadProductFailed(error));
@@ -35,16 +36,25 @@ export const getProducts = () => {
 };
 
 export const getOrderedProducts = (product,orderby) => {
-    return (dispatch) => {
-        const orderedProducts = product;             
+    return async (dispatch) => {
+
+        let orderedProducts = product;  
 
         if (orderby !== "") {
-            console.log("holi");
-            orderedProducts.sort((a, b) => orderby === "lowestprice" ? (a.cost > b.cost ? 1 : -1)
-             : orderedProducts);
-             
-            console.log(orderedProducts);
+
+            orderedProducts.sort((a, b) => 
+                orderby === "category" ? (a.category > b.category ? 1 : -1)
+                : orderby === "lowestprice" ? (a.cost > b.cost ? 1 : -1)
+                : orderby === "highestprice" ? (a.cost < b.cost ? 1 : -1) 
+                : orderedProducts);  
+
+            dispatch(loadOrderedProducts(orderedProducts,orderby));   
         }
-        dispatch(loadOrderedProducts(orderedProducts,orderby));  
+        
+        try {         
+            dispatch(loadProductSuccess(orderedProducts));
+        } catch (error) {
+            dispatch(loadProductFailed(error));
+        }
     };
 };

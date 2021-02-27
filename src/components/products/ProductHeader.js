@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductHeader = ({ product,orderProducts}) => {
+const ProductHeader = ({product,orderProducts}) => {
 
   return (
     <>  
@@ -16,7 +16,7 @@ const ProductHeader = ({ product,orderProducts}) => {
         </button>
         </div>
         <div className="grid-item">
-        <button className="p-button" onClick={() => orderProducts(product,"")}>
+        <button className="p-button" onClick={() => orderProducts(product,"highestprice")}>
             Highest Price
         </button>
         </div>

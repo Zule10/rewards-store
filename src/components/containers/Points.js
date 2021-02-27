@@ -5,6 +5,7 @@ import AddPoints from "../points/AddPoints";
 const mapStateToProps = (state) => {
     return {
       points: state.points_reducer,
+      isLoading: state.user_reducer.loading
     };
   };
   
